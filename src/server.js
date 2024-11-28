@@ -19,6 +19,7 @@ const compileTemplate = Handlebars.compile(template);
 // 서버 생성
 const server = http.createServer((request,response)=> {
   if(request.method==="GET"){
+    console.log(request.url);
   if(request.url === '/'){
     //h1태그
     const data = { test : "success"};
@@ -27,6 +28,30 @@ const server = http.createServer((request,response)=> {
 
     response.writeHead(200,{'Content-Type':'text/html'});
     response.end(html);
+  }
+  if(request.url === '/one') {
+    const h1data = { test : "one", color : "red"};
+    
+        const h1 = compileTemplate(h1data);
+    
+        response.writeHead(200,{'Content-Type':'text/html'});
+        response.end(h1);
+  }
+  if(request.url === '/two') {
+    const h1dataTwo = { test : "two", color : "blue"};
+    
+        const h1Two = compileTemplate(h1dataTwo);
+    
+        response.writeHead(200,{'Content-Type':'text/html'});
+        response.end(h1Two);
+  }
+  if(request.url ==='/three' ) {
+    const h1dataTre = { test : "three", color : "green"};
+    
+        const h1Tre = compileTemplate(h1dataTre);
+    
+        response.writeHead(200,{'Content-Type':'text/html'});
+        response.end(h1Tre);
   }
 }
 
