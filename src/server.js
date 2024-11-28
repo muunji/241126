@@ -13,7 +13,6 @@ const pathHandle = path.join(__dirname,"../public/index.handlebars")
 // console.log(pathHandle);
 
 const template = fs.readFileSync(pathHandle,'utf-8');
-
 const compileTemplate = Handlebars.compile(template);
 
 //------------class, func
@@ -26,49 +25,14 @@ value.contentsValue();
 
 // 서버 생성
 const server = http.createServer((request,response)=> {
-  if(request.method==="GET"){
-    console.log(request.url);
-  if(request.url === '/'){
-    //h1태그
-    // value = new handleClass("success","black").contentsValue();
-    // // console.log(value);
-
-    // const html = compileTemplate(value);
-
-    // response.writeHead(200,{'Content-Type':'text/html'});
-    // response.end(html);
-
-    classFunc("sucess","black",response);
+  if(request.method === "GET") {
+    if(request.url ==='/'){
+      response.writeHead(200,{'Content-Type':'text/html'});
+      response.end(compileTemplate());
+    }
   }
-  if(request.url === '/one') {
-
-        const h1data = new handleClass("one","red");
-
-        const h1 = compileTemplate(h1data.contentsValue());
-    
-        response.writeHead(200,{'Content-Type':'text/html'});
-        response.end(h1);
-  }
-  if(request.url === '/two') {
-    const h1dataTwo = { test : "two", color : "blue"};
-    
-        const h1Two = compileTemplate(h1dataTwo);
-    
-        response.writeHead(200,{'Content-Type':'text/html'});
-        response.end(h1Two);
-  }
-  if(request.url ==='/three' ) {
-    const h1dataTre = { test : "three", color : "green"};
-    
-        const h1Tre = compileTemplate(h1dataTre);
-    
-        response.writeHead(200,{'Content-Type':'text/html'});
-        response.end(h1Tre);
-  }
-}
-
 })
 
 server.listen(3000,function(){
-  console.log("http://localhost:3000");
+  console.log("http://localhost:3030");
 })
