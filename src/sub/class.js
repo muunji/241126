@@ -1,5 +1,5 @@
 export default class contents {
-  constructor (colorValue, textValue) {
+  constructor (textValue, colorValue) {
     this.colorValue = colorValue;
     this.textValue = textValue;
   }
