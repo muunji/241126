@@ -1,0 +1,15 @@
+{
+  "name": "241126",
+  "version": "1.0.0",
+  "main": "/src/server.js",
+  "repository": "https://github.com/muunji/241126.git",
+  "author": "muunji <twoji3019@naver.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./src/server.js"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.8"
+  }
+}
