@@ -19,26 +19,31 @@ const compileTemplate = Handlebars.compile(template);
 //------------class
 import handleClass from './sub/class.js';
 
+//------------handlebar object
+let value = new handleClass("","black");
+value.contentsValue();
+
 // 서버 생성
 const server = http.createServer((request,response)=> {
   if(request.method==="GET"){
     console.log(request.url);
   if(request.url === '/'){
     //h1태그
-    const data = { test : "success"};
+    value.test="success";
 
-    const html = compileTemplate(data);
+    const html = compileTemplate(value);
 
     response.writeHead(200,{'Content-Type':'text/html'});
     response.end(html);
   }
-  if(request.url === '/one') {
+  // if(request.url === '/one') {
+
+        
+  //       const h1 = compileTemplate(h1data);
     
-        const h1 = compileTemplate(h1data);
-    
-        response.writeHead(200,{'Content-Type':'text/html'});
-        response.end(h1);
-  }
+  //       response.writeHead(200,{'Content-Type':'text/html'});
+  //       response.end(h1);
+  // }
   if(request.url === '/two') {
     const h1dataTwo = { test : "two", color : "blue"};
     
