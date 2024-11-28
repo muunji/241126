@@ -3,8 +3,4 @@ export default class contents {
     this.colorValue = colorValue;
     this.textValue = textValue;
   }
-
-  contentsValue() {
-    return {color : this.colorValue, text: this.textValue}
-  }
 }

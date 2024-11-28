@@ -17,6 +17,7 @@ const template = fs.readFileSync(pathHandle,'utf-8');
 const compileTemplate = Handlebars.compile(template);
 
 //------------class
+import handleClass from './sub/class.js';
 
 // 서버 생성
 const server = http.createServer((request,response)=> {
@@ -32,7 +33,6 @@ const server = http.createServer((request,response)=> {
     response.end(html);
   }
   if(request.url === '/one') {
-    const h1data = { test : "one", color : "red"};
     
         const h1 = compileTemplate(h1data);
     
