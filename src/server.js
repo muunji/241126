@@ -16,8 +16,9 @@ const template = fs.readFileSync(pathHandle,'utf-8');
 
 const compileTemplate = Handlebars.compile(template);
 
-//------------class
+//------------class, func
 import handleClass from './sub/class.js';
+import classFunc from './sub/func.js';
 
 //------------handlebar object
 let value = new handleClass("","");
@@ -29,13 +30,15 @@ const server = http.createServer((request,response)=> {
     console.log(request.url);
   if(request.url === '/'){
     //h1태그
-    value = new handleClass("success","black").contentsValue();
-    console.log(value);
+    // value = new handleClass("success","black").contentsValue();
+    // // console.log(value);
 
-    const html = compileTemplate(value);
+    // const html = compileTemplate(value);
 
-    response.writeHead(200,{'Content-Type':'text/html'});
-    response.end(html);
+    // response.writeHead(200,{'Content-Type':'text/html'});
+    // response.end(html);
+
+    classFunc("sucess","black",response);
   }
   if(request.url === '/one') {
 
