@@ -27,12 +27,18 @@ value.contentsValue();
 const server = http.createServer((request,response)=> {
   if(request.method === "GET") {
     if(request.url ==='/'){
+      const data = {title : "test"}
+      const start = compileTemplate(data);
       response.writeHead(200,{'Content-Type':'text/html'});
-      response.end(compileTemplate());
+      response.end(start);
     }
+    // if(request.url.includes === 'style') {
+    //   response.writeHead(200, {'Content-Type':'text/css'});
+    //   response.end();
+    // }
   }
 })
 
-server.listen(3000,function(){
+server.listen(3030,function(){
   console.log("http://localhost:3030");
 })
