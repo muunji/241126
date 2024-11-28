@@ -1,3 +1,5 @@
+//title, main-backgroundColor, firstname
+
 export default class contents {
   constructor (textValue, colorValue) {
     this.colorValue = colorValue;
