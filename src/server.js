@@ -38,7 +38,6 @@ const server = http.createServer((request,response)=> {
       valueFunc("test","#ccc","FIRST NAME",response)
     }
     if(request.url.includes ('style')) {
-      //함수로 만들고 싶은 부분
       const pathStyle = path.join(__dirname,"../public/css/style.css");
       const styleData = fs.readFileSync(pathStyle,"utf-8",function(err,data){
         if(err){
