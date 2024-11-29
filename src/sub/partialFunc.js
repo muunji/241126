@@ -15,17 +15,8 @@ const compileTemplate = Handlebars.compile(template);
 // const headerTemplate = fs.readFileSync(pathHeader,'utf-8');
 // Handlebars.registerPartial('header',headerTemplate);
 
-// const pathFooter = path.join(__dirname,"../public/partial/footer.hbs")
-// const footerTemplate = fs.readFileSync(pathFooter,'utf-8');
-// Handlebars.registerPartial('footer',footerTemplate);
-
-// const pathMain = path.join(__dirname,"../public/partial/main.hbs")
-// const mainTemplate = fs.readFileSync(pathMain,'utf-8');
-// Handlebars.registerPartial('main',mainTemplate);
-
-export default function usePartial(dirname,tag) {
-  const direc = `../../public/partial/${tag}.hbs`
-  const path = path.join(dirname,direc);
-  const Template = fs.readFileSync(path,'utf-8');
-  Handlebars.registerPartial(`"${tag}"`,Template);
-}
+export default function usePartial(fileDirec,tag) {
+  const pathTag = path.join(__dirname,"../"+fileDirec)
+  const tagTemplate = fs.readFileSync(pathTag,'utf-8');
+  Handlebars.registerPartial(tag,tagTemplate);
+  }

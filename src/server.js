@@ -20,8 +20,7 @@ import usePartial from './sub/partialFunc.js'
 // const pathHeader = path.join(__dirname,"../public/partial/header.hbs")
 // const headerTemplate = fs.readFileSync(pathHeader,'utf-8');
 // Handlebars.registerPartial('header',headerTemplate);
-usePartial(__dirname,header);
-
+usePartial("../public/partial/header.hbs",'header');
 
 const pathFooter = path.join(__dirname,"../public/partial/footer.hbs")
 const footerTemplate = fs.readFileSync(pathFooter,'utf-8');
