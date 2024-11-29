@@ -11,11 +11,11 @@ const template = fs.readFileSync(pathHandle,'utf-8');
 
 const compileTemplate = Handlebars.compile(template);
 
-import Contents from './class.js'
+import valueClass from '../sub/class.js'
 
 
 export default function serv(titleV, colorV, nameV, response) {
-  let ctV = new Contents(titleV,colorV,nameV).contentsValue();
+  let ctV = new valueClass(titleV,colorV,nameV).contentsValue();
 
   const comp = compileTemplate(ctV);
   response.writeHead(200,{'Content-Type':'text/html'});

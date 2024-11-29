@@ -27,11 +27,14 @@ value.contentsValue();
 // 서버 생성
 const server = http.createServer((request,response)=> {
   if(request.method === "GET") {
+    //mainPage
     if(request.url ==='/'){
-      const data = {title : "test",bgColor:"black",name:"FIRST NAME"}
-      const start = compileTemplate(data);
-      response.writeHead(200,{'Content-Type':'text/html'});
-      response.end(start);
+
+      valueFunc("test","#ccc","FIRST NAME",response)
+      // const data = {title : "test",bgColor:"#ccc",name:"FIRST NAME"}
+      // const start = compileTemplate(data);
+      // response.writeHead(200,{'Content-Type':'text/html'});
+      // response.end(start);
     }
     if(request.url.includes ('style')) {
       //함수로 만들고 싶은 부분
@@ -46,6 +49,8 @@ const server = http.createServer((request,response)=> {
       response.writeHead(200, {'Content-Type':'text/css'});
       response.write(styleData);
       response.end();
+    }
+    if(request.url.includes('kong')){
     }
   }
 })
