@@ -17,20 +17,9 @@ const compileTemplate = Handlebars.compile(template);
 //partial 함수
 import usePartial from './sub/partialFunc.js'
 //partial 등록
-// const pathHeader = path.join(__dirname,"../public/partial/header.hbs")
-// const headerTemplate = fs.readFileSync(pathHeader,'utf-8');
-// Handlebars.registerPartial('header',headerTemplate);
 usePartial("../public/partial/header.hbs",'header');
-
-const pathFooter = path.join(__dirname,"../public/partial/footer.hbs")
-const footerTemplate = fs.readFileSync(pathFooter,'utf-8');
-Handlebars.registerPartial('footer',footerTemplate);
-
-const pathMain = path.join(__dirname,"../public/partial/main.hbs")
-const mainTemplate = fs.readFileSync(pathMain,'utf-8');
-Handlebars.registerPartial('main',mainTemplate);
-
-
+usePartial("../public/partial/main.hbs",'main');
+usePartial("../public/partial/footer.hbs",'footer');
 
 //------------class, func
 import valueClass from './sub/class.js';
