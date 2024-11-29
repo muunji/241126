@@ -1,4 +1,5 @@
-//title, main-backgroundColor, firstname
+//title, main
+//main = {bgColor, name}
 
 export default class contents {
   constructor (titleValue, bgColorValue, nameValue) {

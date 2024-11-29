@@ -16,22 +16,19 @@ const template = fs.readFileSync(pathHandle,'utf-8');
 const compileTemplate = Handlebars.compile(template);
 
 //------------class, func
-import handleClass from './sub/class.js';
-import classFunc from './sub/func.js';
+import valueClass from './sub/class.js';
+import valueFunc from './sub/func.js';
 
-//------------main
-import mainTag from '../public/main/mainOne.js'
-console.log("main" +mainTag);
 
 //------------handlebar object
-let value = new handleClass("","");
+let value = new valueClass("","");
 value.contentsValue();
 
 // 서버 생성
 const server = http.createServer((request,response)=> {
   if(request.method === "GET") {
     if(request.url ==='/'){
-      const data = {title : "test"}
+      const data = {title : "test",bgColor:"black",name:"FIRST NAME"}
       const start = compileTemplate(data);
       response.writeHead(200,{'Content-Type':'text/html'});
       response.end(start);
