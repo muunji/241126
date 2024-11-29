@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+header {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+header > div p{
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+ul {
+  height: 100%;
+}
+ul li {
+  height: 33.33%;
+  font-size: 14px;
+  text-align: center;
+  line-height: 25px;
+}
+footer {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  line-height: 80px;
+  color: #aaa;
+}

@@ -32,10 +32,19 @@ const server = http.createServer((request,response)=> {
       response.writeHead(200,{'Content-Type':'text/html'});
       response.end(start);
     }
-    // if(request.url.includes === 'style') {
-    //   response.writeHead(200, {'Content-Type':'text/css'});
-    //   response.end();
-    // }
+    if(request.url.includes ('style')) {
+      const pathStyle = path.join(__dirname,"../public/css/style.css");
+      const styleData = fs.readFileSync(pathStyle,"utf-8",function(err,data){
+        if(err){
+          console.error(err)
+        } else {
+          return data;
+        }
+      })
+      response.writeHead(200, {'Content-Type':'text/css'});
+      response.write(styleData);
+      response.end();
+    }
   }
 })
 
