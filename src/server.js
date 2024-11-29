@@ -14,14 +14,22 @@ const pathHandle = path.join(__dirname,"../public/index.handlebars")
 const template = fs.readFileSync(pathHandle,'utf-8');
 const compileTemplate = Handlebars.compile(template);
 
+//partial 함수
+import usePartial from './sub/partialFunc.js'
 //partial 등록
-const pathHeader = path.join(__dirname,"../public/partial/header.hbs")
-const headerTemplate = fs.readFileSync(pathHeader,'utf-8');
-Handlebars.registerPartial('header',headerTemplate);
+// const pathHeader = path.join(__dirname,"../public/partial/header.hbs")
+// const headerTemplate = fs.readFileSync(pathHeader,'utf-8');
+// Handlebars.registerPartial('header',headerTemplate);
+usePartial(__dirname,header);
+
 
 const pathFooter = path.join(__dirname,"../public/partial/footer.hbs")
 const footerTemplate = fs.readFileSync(pathFooter,'utf-8');
 Handlebars.registerPartial('footer',footerTemplate);
+
+const pathMain = path.join(__dirname,"../public/partial/main.hbs")
+const mainTemplate = fs.readFileSync(pathMain,'utf-8');
+Handlebars.registerPartial('main',mainTemplate);
 
 
 
