@@ -12,6 +12,11 @@ import Handlebars from 'handlebars';
 const pathHandle = path.join(__dirname,"../public/index.handlebars")
 // console.log(pathHandle);
 
+//partial 등록
+const pathHeader = path.join(__dirname,"../public/partial/header.hbs")
+const headerTemplate = fs.readFileSync(pathHeader,'utf-8');
+Handlebars.registerPartial('header',headerTemplate);
+
 const template = fs.readFileSync(pathHandle,'utf-8');
 const compileTemplate = Handlebars.compile(template);
 
@@ -45,6 +50,7 @@ const server = http.createServer((request,response)=> {
       response.write(styleData);
       response.end();
     }
+    //atag 눌렀을 때
     if(request.url.includes('kong')){
       valueFunc("test-KO","cadetblue","KONG",response)
     }
