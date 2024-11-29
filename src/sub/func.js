@@ -14,8 +14,8 @@ const compileTemplate = Handlebars.compile(template);
 import Contents from './class.js'
 
 
-export default function serv(testV, colorV, response) {
-  let ctV = new Contents(testV,colorV).contentsValue();
+export default function serv(titleV, colorV, nameV, response) {
+  let ctV = new Contents(titleV,colorV,nameV).contentsValue();
 
   const comp = compileTemplate(ctV);
   response.writeHead(200,{'Content-Type':'text/html'});
