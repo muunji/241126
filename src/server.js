@@ -11,14 +11,19 @@ import Handlebars from 'handlebars';
 
 const pathHandle = path.join(__dirname,"../public/index.handlebars")
 // console.log(pathHandle);
+const template = fs.readFileSync(pathHandle,'utf-8');
+const compileTemplate = Handlebars.compile(template);
 
 //partial 등록
 const pathHeader = path.join(__dirname,"../public/partial/header.hbs")
 const headerTemplate = fs.readFileSync(pathHeader,'utf-8');
 Handlebars.registerPartial('header',headerTemplate);
 
-const template = fs.readFileSync(pathHandle,'utf-8');
-const compileTemplate = Handlebars.compile(template);
+const pathFooter = path.join(__dirname,"../public/partial/footer.hbs")
+const footerTemplate = fs.readFileSync(pathFooter,'utf-8');
+Handlebars.registerPartial('header',footerTemplate);
+
+
 
 //------------class, func
 import valueClass from './sub/class.js';
