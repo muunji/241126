@@ -1,12 +1,13 @@
 //title, main-backgroundColor, firstname
 
 export default class contents {
-  constructor (textValue, colorValue) {
-    this.colorValue = colorValue;
-    this.textValue = textValue;
+  constructor (titleValue, bgColorValue, nameValue) {
+    this.titleValue = titleValue;
+    this.bgColorValue = bgColorValue;
+    this.nameValue = nameValue;
   }
   contentsValue(){
-    let result = {test:this.textValue, color: this.colorValue};
+    let result = {title:this.titleValue, bgColor: this.bgColorValue, name:this.nameValue};
     return result;
   }
 }
