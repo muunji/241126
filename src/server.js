@@ -29,12 +29,7 @@ const server = http.createServer((request,response)=> {
   if(request.method === "GET") {
     //mainPage
     if(request.url ==='/'){
-
       valueFunc("test","#ccc","FIRST NAME",response)
-      // const data = {title : "test",bgColor:"#ccc",name:"FIRST NAME"}
-      // const start = compileTemplate(data);
-      // response.writeHead(200,{'Content-Type':'text/html'});
-      // response.end(start);
     }
     if(request.url.includes ('style')) {
       //함수로 만들고 싶은 부분
@@ -51,6 +46,13 @@ const server = http.createServer((request,response)=> {
       response.end();
     }
     if(request.url.includes('kong')){
+      valueFunc("test-KO","cadetblue","KONG",response)
+    }
+    if(request.url.includes('seo')){
+      valueFunc("test-S","cornflowerblue","SEO",response)
+    }
+    if(request.url.includes('kim')){
+      valueFunc("test-K","floralwhite","KIM",response)
     }
   }
 })
