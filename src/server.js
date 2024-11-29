@@ -21,7 +21,7 @@ Handlebars.registerPartial('header',headerTemplate);
 
 const pathFooter = path.join(__dirname,"../public/partial/footer.hbs")
 const footerTemplate = fs.readFileSync(pathFooter,'utf-8');
-Handlebars.registerPartial('header',footerTemplate);
+Handlebars.registerPartial('footer',footerTemplate);
 
 
 
