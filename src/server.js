@@ -22,8 +22,9 @@ const mainData = {
 
 //server
 const server = http.createServer((req,res)=>{
-  if(req.url.startsWith('../public/css/')) {
-    const cssPath = path.join(__dirname, "/public/css/style.css");
+  console.log(req.url)
+  if(req.url.startsWith('/public/css/')) {
+    const cssPath = path.join(__dirname, "../public/css/style.css");
     res.writeHead(200,{'content-type':'text/css'});
     res.end(fs.readFileSync(cssPath));
     return;
