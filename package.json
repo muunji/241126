@@ -5,7 +5,6 @@
   "repository": "https://github.com/muunji/241126.git",
   "author": "muunji <twoji3019@naver.com>",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "dev": "node ./src/server.js"
   },
