@@ -8,10 +8,10 @@ function readTemplate(filePath) {
 }
 
 //컴파일
-const indexTemplate = Handlebars.compile(readTemplate('/public/index.handlebars'));
-const headerTemplate = Handlebars.compile(readTemplate('/public/templates/header.handlebars'));
-const mainTemplate = Handlebars.compile(readTemplate('/public/templates/main.handlebars'));
-const footerTemplate = Handlebars.compile(readTemplate('/public/templates/footer.handlebars'));
+const indexTemplate = Handlebars.compile(readTemplate('../public/index.handlebars'));
+const headerTemplate = Handlebars.compile(readTemplate('../public/templates/header.handlebars'));
+const mainTemplate = Handlebars.compile(readTemplate('../public/templates/main.handlebars'));
+const footerTemplate = Handlebars.compile(readTemplate('../public/templates/footer.handlebars'));
 
 //main Data
 const mainData = {
@@ -22,8 +22,8 @@ const mainData = {
 
 //server
 const server = http.createServer((req,res)=>{
-  if(req.url.startsWith('/css/')) {
-    const cssPath = path.join(__dirname, req.url);
+  if(req.url.startsWith('../public/css/')) {
+    const cssPath = path.join(__dirname, "/public/css/style.css");
     res.writeHead(200,{'content-type':'text/css'});
     res.end(fs.readFileSync(cssPath));
     return;
